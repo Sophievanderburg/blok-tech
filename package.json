@@ -1,0 +1,26 @@
+{
+  "name": "project-tech",
+  "version": "1.0.0",
+  "description": "This is a project for block-tech",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hoi" : "echo 'Hoi'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sophievanderburg/blok-tech.git"
+  },
+  "author": "\"Sophie van der Burg\"",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sophievanderburg/blok-tech/issues"
+  },
+  "homepage": "https://github.com/Sophievanderburg/blok-tech#readme",
+  "dependencies": {
+    "camelcase": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
