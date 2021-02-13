@@ -1,9 +1,15 @@
 const express = require('express');
+const app = express();
 
-express()
-    .get('/', sayhello)
-    .listen(3000)
+app.use('/static',express.static('public'));
+app.get('/', onhome);
+app.get('/about', onabout);
+app.listen(3000);
 
-function sayhello (req,res) {
-    res.send('<h1>Hello Client</h1>')
+function onhome (req,res) {
+    res.send('<h1>Hello Client</h1>');
+}
+
+function onabout (req,res) {
+    res.send('<h1>About page</h1>');
 }
