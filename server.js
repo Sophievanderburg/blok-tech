@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.use('/static',express.static('public'));
+app.use(express.static('static/public'));
 app.get('/', onhome);
 app.get('/about', onabout);
 app.listen(3000);
