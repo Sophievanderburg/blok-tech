@@ -31,7 +31,7 @@ function onabout (req,res) {
 }
 
 function onmatch (req, res) {
-    res.render('match.ejs');
+    res.render('match.ejs', {name: 'Sophie', age: 19});
 }
 
 function error404( req, res, next) {
