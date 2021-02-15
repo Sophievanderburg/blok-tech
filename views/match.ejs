@@ -10,6 +10,12 @@
  <h1> hello there!</h1>
  <p> welcome this site, <%= name %>!</p>
  <p> You are <%= age %> years old.</p>
+
+ <% if( age > 18){ %>
+    <p>You are an adult.</p>
+    <% } else { %>
+    <p>You are not an adult.</p>
+    <% } %>
  
  <div>
     <%- include('partials/footer') %>
