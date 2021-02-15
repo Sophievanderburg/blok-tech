@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Matching app feature</title>
+    <title>practice page</title>
 </head>
 <body>
- <h1> Find your match here!</h1>
+ <h1> hello there!</h1>
+ <p> welcome this site, <%= name %>!</p>
+ <p> You are <%= age %> years old.</p>
+
+ <% if( age > 18){ %>
+    <p>You are an adult.</p>
+    <% } else { %>
+    <p>You are not an adult.</p>
+    <% } %>
  
  <div>
     <%- include('partials/footer') %>

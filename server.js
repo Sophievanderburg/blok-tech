@@ -17,6 +17,7 @@ app.listen(3000);
 app.get('/', onhome);
 app.get('/about', onabout);
 app.get('/match', onmatch);
+app.get('/practice', onpractice);
 
 // errors
 app.use(error404);
@@ -31,7 +32,11 @@ function onabout (req,res) {
 }
 
 function onmatch (req, res) {
-    res.render('match.ejs', {name: 'Sophie', age: 19});
+    res.render('match.ejs');
+}
+
+function onpractice (req, res) {
+    res.render('practice.ejs', {name: 'Sophie', age: 19});
 }
 
 function error404( req, res, next) {
