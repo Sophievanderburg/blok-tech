@@ -3,3 +3,125 @@
     padding: 0; margin: 0;
     font-family: Helvetica;
 }
+/* ----------------- typografie ----------------*/
+header h1{
+   font-size: 2em; 
+}
+
+header button p{
+    font-size: 1.25em;
+}
+
+main ul li a div h2{
+    font-size: 1.25em;
+}
+
+main ul li a div p {
+    font-size: 1em;
+}
+
+
+
+/* ----------------- header ----------------*/
+header{
+    margin-bottom: 2em;
+    padding: 1em 0;
+
+    position: relative;
+}
+
+header > h1{
+    width: 100%;
+    text-align: center;
+    color: #484692;
+}
+
+header button{
+    position: absolute;
+    top: 1em;
+    left: 1em;
+
+    width: 3em;
+    border: none;
+    background-color: white;
+}
+
+header button img{
+    width: 100%;
+}
+
+header button p{
+    color: #484692;
+}
+
+/* ----------------- main ----------------*/
+/* all ul li's in the main*/
+main ul li{
+    list-style-type: none;
+}
+
+main ul li a{
+    width: 100%;
+    height: 100%;
+}
+
+/* list item of liked match */
+main > ul > li{
+    width: 92%;
+    box-shadow: 0 0 6px lightgrey;
+    border-radius: 1em;
+
+    padding: 1em;
+    margin: 0 auto 0 auto;
+}
+
+/*profile picture*/
+main > ul > li a img{
+   background-color: #52C9C2;
+    width: 80%;
+}
+
+/* list of genres*/
+main ul li a div ul {
+    margin: 1em 0;
+    display: flex;
+}
+
+main ul li a div ul li{
+    margin: 0 0.25em;
+    padding: 0.5em 1em;
+
+    color: white;
+    background-color: #52C9C2;
+    border-radius: 1em;
+}
+
+main ul li{
+    position: relative;
+}
+
+/*remove button*/
+main ul li a > button{
+    color: #484692;
+    text-decoration: underline;
+    font-size: 1em;
+
+    background-color: transparent;
+    border: none;
+
+    position: absolute; 
+    bottom: 0.5em;
+    right: 2em;
+}
+
+/* p 'end of list'*/
+main > p{
+    width: 100%;
+    text-align: center;
+    padding-top: 1.5em;
+}
+
+/* ----------------- footer ----------------*/
+body > div {
+    margin-top: 2em;
+}
