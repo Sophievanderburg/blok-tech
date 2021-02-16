@@ -1,43 +1,5 @@
-/*css*/
 *, *::after, *::before {
     box-sizing:border-box;
     padding: 0; margin: 0;
     font-family: Helvetica;
-}
-
-header{
-    display: flex;
-    margin-bottom: 1em;
-}
-
-main div{
-    width: 80%;
-    box-shadow: 1px 1px 5px grey;
-    margin: 0 auto 0 auto;
-    padding: 1em;
-}
-
-main div > img {
-    border: 1px solid black;
-}
-
-main div ul{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    overflow: scroll;
-    
-    margin: 1em 0;
-}
-
-main div ul li{
-    list-style-type: none;
-}
-
-button{
-    width: 3em;
-}
-
-button img{
-    width: 100%;
 }
