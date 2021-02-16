@@ -8,8 +8,8 @@ app.set('view engine', 'ejs');
 app.use(express.static('static/public'));
 
 // app.mehtod('path', callbackfunction)
-app.get('/', onhome);
-app.get('/about', onabout);
+
+app.get('/', onsavedmatch);
 app.get('/match', onmatch);
 app.get('/practice', onpractice);
 
@@ -20,16 +20,12 @@ app.use(error404);
 app.listen(3000);
 
 // callback functions
-function onhome (req,res) {
-    res.send('<h1>Hello Client</h1>');
-}
-
-function onabout (req,res) {
-    res.send('<h1>About page</h1>');
+function onsavedmatch (req, res) {
+    res.render('savedmatch.ejs');
 }
 
 function onmatch (req, res) {
-    res.render('savedmatch.ejs');
+    res.render('match.ejs');
 }
 
 function onpractice (req, res) {
