@@ -23,6 +23,14 @@
 
        <input type="submit">
     </form>
+
+    <ul>
+      <% for(var i = 0; i < animal.length; i++) { %>
+         <li><%= animal[i] %></li>
+       <% } %>
+ 
+  </ul>
+
  
  <div>
     <%- include('partials/footer') %>

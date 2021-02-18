@@ -35,7 +35,7 @@ function onmatch (req, res) {
 }
 
 function onpractice (req, res) {
-    res.render('practice.ejs', {name:"Sophie", age: 19});
+    res.render('practice.ejs', {name:"Sophie", age: 19, animal:["dog", "cat", "frog", "mouse"]});
 }
 
 function postname (req, res){
