@@ -4,8 +4,9 @@ const bodyParser = require('body-parser'); //parses the data and stores it in re
 
 var data = [];
 var matches = [
-                {firstname:"Sophie", lastname:"van der Burg", age:"19", genre1:"Pop", genre2:"Pop 2", genre3:"Pop 3"},
-                {firstname:"Rob", lastname:"Bakker", age:"23", genre1:"Rock", genre2:"Rock 2", genre3:"Rock 3"}, 
+                {firstname:"Hannah", lastname:"Rosenberg", age:"20", source:"images/profile/1.jpg", genre1:"Pop", genre2:"Electronic", genre3:"Rock"},
+                {firstname:"Rob", lastname:"Bakker", age:"23", source:"images/profile/2.jpg", genre1:"Rock", genre2:"Pop", genre3:"Electronic"},
+                {firstname:"Mark", lastname:"de Graaf", age:"26", source:"images/profile/3.jpg", genre1:"Electronic", genre2:"Rock", genre3:"Pop"}, 
               ]
 
 // view engine ejs

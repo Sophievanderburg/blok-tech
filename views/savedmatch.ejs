@@ -19,7 +19,7 @@
             <% for(var i = 0; i < matches.length; i++) { %>
             <li>
                 <a>
-                    <img src="" alt="Profilepicture">
+                    <img src="<%= matches[i].source %>" alt="Profilepicture">
                     <div>
                         <h2><%= matches[i].firstname %> <%= matches[i].lastname %></h2>
                         <p>Age: <%= matches[i].age %></p>
