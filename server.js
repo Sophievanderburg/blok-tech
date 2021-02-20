@@ -18,6 +18,7 @@ app.get('/', onsavedmatch);
 app.get('/match', onmatch);
 app.get('/practice', onpractice);
 app.post('/practice', postname);
+app.delete('/practice', deleteListitem)
 
 // errors
 app.use(error404);
@@ -35,12 +36,17 @@ function onmatch (req, res) {
 }
 
 function onpractice (req, res) {
-    res.render('practice.ejs', {name:"Sophie", age: 19, animal:["dog", "cat", "frog", "mouse"]});
+    res.render('practice.ejs', {name:"Sophie", age: 19, firstname:"...", animal:["dog", "cat", "frog", "mouse"]});
+}
+
+//werkt niet!!
+function deleteListitem (req, res){
+    res.send('Got a DELETE request at /practice')
 }
 
 function postname (req, res){
     data.push({firstname:req.body.firstname});
-    res.send("Je naam is " + req.body.firstname + ".");
+    res.send({firstname:"req.body.firstname"});
 }
 
 function error404( req, res, next) {

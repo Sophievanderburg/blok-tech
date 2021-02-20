@@ -24,9 +24,16 @@
        <input type="submit">
     </form>
 
+    <p>Your name is <%= firstname %></p>
+
     <ul>
       <% for(var i = 0; i < animal.length; i++) { %>
-         <li><%= animal[i] %></li>
+         <li>
+            <%= animal[i] %> 
+            <form method="POST" action="/practice">
+            <input id="delete" type="submit" value="delete"> 
+            </form>
+         </li>
        <% } %>
  
   </ul>
