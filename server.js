@@ -3,6 +3,10 @@ const app = express();
 const bodyParser = require('body-parser'); //parses the data and stores it in req.body
 
 var data = [];
+var matches = [
+                {firstname:"Sophie", lastname:"van der Burg", age:"19", genre1:"Pop", genre2:"Pop 2", genre3:"Pop 3"},
+                {firstname:"Rob", lastname:"Bakker", age:"23", genre1:"Rock", genre2:"Rock 2", genre3:"Rock 3"}, 
+              ]
 
 // view engine ejs
 app.set('view engine', 'ejs');
@@ -28,7 +32,7 @@ app.listen(3000);
 
 // callback functions
 function onsavedmatch (req, res) {
-    res.render('savedmatch.ejs');
+    res.render('savedmatch.ejs', {matches:matches});
 }
 
 function onmatch (req, res) {

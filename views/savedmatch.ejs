@@ -16,16 +16,17 @@
     </header>
     <main>
         <ul>
+            <% for(var i = 0; i < matches.length; i++) { %>
             <li>
                 <a>
                     <img src="" alt="Profilepicture">
                     <div>
-                        <h2>Name</h2>
-                        <p>Age</p>
+                        <h2><%= matches[i].firstname %> <%= matches[i].lastname %></h2>
+                        <p>Age: <%= matches[i].age %></p>
                         <ul>
-                            <li>Genre 1</li>
-                            <li>Genre 2</li>
-                            <li>Genre 3</li>
+                            <li><%= matches[i].genre1 %></li>
+                            <li><%= matches[i].genre2 %></li>
+                            <li><%= matches[i].genre3 %></li>
                         </ul>
                     </div>
                     <button>
@@ -33,6 +34,7 @@
                     </button>
                 </a>
             </li>
+            <% }; %>
         </ul>
         <p>This is the end of the list!</p>
     </main>
