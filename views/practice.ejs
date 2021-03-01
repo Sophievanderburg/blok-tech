@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>practice page</title>
-</head>
-<body>
- <h1> hello there!</h1>
- <p> welcome this site, <%= name %>!</p>
- <p> You are <%= age %> years old.</p>
+  </head>
+  <body>
+    <h1>hello there!</h1>
+    <p>welcome this site, <%= name %>!</p>
+    <p>You are <%= age %> years old.</p>
 
- <% if( age > 18){ %>
+    <% if( age > 18){ %>
     <p>You are an adult.</p>
     <% } else { %>
     <p>You are not an adult.</p>
@@ -19,28 +19,24 @@
 
     <form method="POST" action="/practice">
       <label for="firstname">First name</label>
-       <input type="text" name="firstname">
+      <input type="text" name="firstname" />
 
-       <input type="submit">
+      <input type="submit" />
     </form>
 
     <p>Your name is <%= firstname %></p>
 
     <ul>
       <% for(var i = 0; i < animal.length; i++) { %>
-         <li>
-            <%= animal[i] %> 
-            <form method="POST" action="/practice">
-            <input id="delete" type="submit" value="delete"> 
-            </form>
-         </li>
-       <% } %>
- 
-  </ul>
+      <li>
+        <%= animal[i] %>
+        <form method="POST" action="/practice">
+          <input id="delete" type="submit" value="delete" />
+        </form>
+      </li>
+      <% } %>
+    </ul>
 
- 
- <div>
-    <%- include('partials/footer') %>
- </div>
-</body>
+    <div><%- include('partials/footer') %></div>
+  </body>
 </html>

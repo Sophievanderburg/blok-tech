@@ -1,29 +1,54 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const bodyParser = require('body-parser'); //parses the data and stores it in req.body
+const bodyParser = require("body-parser"); //parses the data and stores it in req.body
 
 var data = [];
 var matches = [
-                {firstname:"Hannah", lastname:"Rosenberg", age:"20", source:"images/profile/1.jpg", genre1:"Pop", genre2:"Electronic", genre3:"Rock"},
-                {firstname:"Rob", lastname:"Bakker", age:"23", source:"images/profile/2.jpg", genre1:"Rock", genre2:"Pop", genre3:"Electronic"},
-                {firstname:"Mark", lastname:"de Graaf", age:"26", source:"images/profile/3.jpg", genre1:"Electronic", genre2:"Rock", genre3:"Pop"}, 
-              ]
+  {
+    firstname: "Hannah",
+    lastname: "Rosenberg",
+    age: "20",
+    source: "images/profile/1.jpg",
+    genre1: "Pop",
+    genre2: "Electronic",
+    genre3: "Rock",
+  },
+  {
+    firstname: "Rob",
+    lastname: "Bakker",
+    age: "23",
+    source: "images/profile/2.jpg",
+    genre1: "Rock",
+    genre2: "Pop",
+    genre3: "Electronic",
+  },
+
+  {
+    firstname: "Mark",
+    lastname: "de Graaf",
+    age: "26",
+    source: "images/profile/3.jpg",
+    genre1: "Electronic",
+    genre2: "Rock",
+    genre3: "Pop",
+  },
+];
 
 // view engine ejs
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
 // make the static/public folder public
-app.use(express.static('static/public'));
+app.use(express.static("static/public"));
 
 // bodyParser iets
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.mehtod('path', callbackfunction)
-app.get('/', onsavedmatch);
-app.get('/match', onmatch);
-app.get('/practice', onpractice);
-app.post('/practice', postname);
-app.delete('/practice', deleteListitem)
+app.get("/", onsavedmatch);
+app.get("/match", onmatch);
+app.get("/practice", onpractice);
+app.post("/practice", postname);
+app.delete("/practice", deleteListitem);
 
 // errors
 app.use(error404);
@@ -32,28 +57,33 @@ app.use(error404);
 app.listen(3000);
 
 // callback functions
-function onsavedmatch (req, res) {
-    res.render('savedmatch.ejs', {matches:matches});
+function onsavedmatch(req, res) {
+  res.render("savedmatch.ejs", { matches: matches });
 }
 
-function onmatch (req, res) {
-    res.render('match.ejs');
+function onmatch(req, res) {
+  res.render("match.ejs");
 }
 
-function onpractice (req, res) {
-    res.render('practice.ejs', {name:"Sophie", age: 19, firstname:"...", animal:["dog", "cat", "frog", "mouse"]});
+function onpractice(req, res) {
+  res.render("practice.ejs", {
+    name: "Sophie",
+    age: 19,
+    firstname: "...",
+    animal: ["dog", "cat", "frog", "mouse"],
+  });
 }
 
 //werkt niet!!
-function deleteListitem (req, res){
-    res.send('Got a DELETE request at /practice')
+function deleteListitem(req, res) {
+  res.send("Got a DELETE request at /practice");
 }
 
-function postname (req, res){
-    data.push({firstname:req.body.firstname});
-    res.send({firstname:"req.body.firstname"});
+function postname(req, res) {
+  data.push({ firstname: req.body.firstname });
+  res.send({ firstname: "req.body.firstname" });
 }
 
-function error404( req, res, next) {
-    res.status(404).send("Sorry can't find that!");
-  }
+function error404(req, res, next) {
+  res.status(404).send("Sorry can't find that!");
+}
