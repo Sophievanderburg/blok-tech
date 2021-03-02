@@ -1,8 +1,17 @@
+require("dotenv").config()
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser"); //parses the data and stores it in req.body
+const mongo = require("mongodb");
 
-var data = [];
+var db = null;
+
+mongo.MongoClient.connect(process.env.MONGO_URI, function (err, client) { 
+  if (err) throw err 
+  db = client.db(process.env.DB_NAME) 
+})
+
+//var data = [];
 var matches = [
   {
     firstname: "Hannah",
@@ -58,7 +67,16 @@ app.listen(3000);
 
 // callback functions
 function onsavedmatch(req, res) {
-  res.render("savedmatch.ejs", { matches: matches });
+  db.collection('users').findOne({
+    _id: mongo.ObjectID("603e5254666b072fef58e44b")
+    }, done)
+    function done(err, data) {
+    if (err) {
+    next(err)
+    } else {
+      res.render("savedmatch.ejs", { data: data });
+    } 
+  } 
 }
 
 function onmatch(req, res) {
