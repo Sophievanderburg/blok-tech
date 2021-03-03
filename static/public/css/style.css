@@ -20,13 +20,14 @@ main ul li a div p {
     font-size: 1em;
 }
 
-
+a{
+    text-decoration: none;
+}
 
 /* ----------------- header ----------------*/
 header{
-    margin-bottom: 2em;
     padding: 1em 0;
-
+    margin-bottom: 1em;
     position: relative;
 }
 
