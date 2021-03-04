@@ -29,6 +29,7 @@ header{
     padding: 1em 0;
     margin-bottom: 1em;
     position: relative;
+    box-shadow: 0px 0px 3px lightgrey;
 }
 
 header > h1{
@@ -51,11 +52,11 @@ header button img{
     width: 100%;
 }
 
-header button p{
-    color: #484692;
+/* ----------------- main ----------------*/
+main{
+    position: relative;
 }
 
-/* ----------------- main ----------------*/
 /* all ul li's in the main*/
 main ul li{
     list-style-type: none;
@@ -101,7 +102,7 @@ main ul li a div ul li{
     text-align: center;
 
     color: white;
-    background-color: #52C9C2;
+    background-image: linear-gradient(to bottom right, #71ebe3, #52C9C2); 
     border-radius: 1em;
 }
 
@@ -110,7 +111,7 @@ main ul li{
 }
 
 /*remove button*/
-main ul li a > button{
+main ul li > button{
     color: #484692;
     text-decoration: underline;
     font-size: 1em;
@@ -128,6 +129,66 @@ main > p{
     width: 100%;
     text-align: center;
     padding-top: 1.5em;
+}
+
+/* pop up that show when the user clicks on the remove button */
+main article.invisible{
+    display: none;
+}
+
+main article.popup{
+    width: 80vw;
+    height: 30vh;
+
+    box-shadow: 0px 0px 6px grey;
+    border-radius: 25px;
+    margin: 0 auto;
+    background-color: white;
+
+    position: absolute;
+    top: calc(30%);
+    left: calc(50% - 40vw);
+}
+
+main article.popup div{
+    display: flex;
+    width: 90%;
+    margin: 2em auto 1.5em auto;
+}
+
+main article.popup div img{
+    width: 30%;
+}
+
+main article.popup div h3{
+    width: 70%;
+    font-size: 1.25em;
+}
+
+main article.popup button{
+    display: block;
+}
+
+main article.popup button:first-of-type{
+    width: 70%;
+    padding: 0.5em 1.5em;
+    border: none;
+    border-radius: 20px;
+
+    font-size: 1em;
+    color: white;
+    background-image: linear-gradient(to bottom right, #7e7bc9, #484692); 
+    margin: 0.5em auto;
+}
+
+main article.popup button:last-of-type{
+    width: 40%;
+    border: none;
+
+    font-size: 1em;
+    color: grey;
+    background-color: white;
+    margin: 0.5em auto;
 }
 
 /* ----------------- footer ----------------*/
