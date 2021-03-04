@@ -15,7 +15,11 @@ $ git clone https://github.com/Sophievanderburg/blok-tech.git
 $ npm install
 ```
 You should see a node_modules folder in the root when it is finished.
-And then you are good to go! :thumbsup:
+And then you are good to go! :thumbsup: </br>
+When you want to run the server, run this code in your terminal:
+```
+$ npm run dev
+```
 
 
 ## :page_facing_up: License
