@@ -10,27 +10,30 @@
     <header>
         <button>
             <img src="images/menu.png" alt="menu icon">
-            <p>Menu</p> 
         </button>
         <h1> Saved matches</h1>
     </header>
     <main>
         <ul>
-            
+            <% for(var i=0; i < data.length; i++) {%>
             <li>
                 <a>
-                   
+                    <img src= "<%= data[i].imgSource %>" >
                     <div>
-                        <h2><%= data.name %> </h2>
-                        <p>Age: <%= data.age %></p>
-                        
+                        <h2> <%= data[i].firstname %>  <%= data[i].lastname %></h2>
+                        <p>Age:  <%= data[i].age %></p>
+                        <ul>
+                            <li> <%= data[i].genre1 %></li>
+                            <li> <%= data[i].genre2 %></li> 
+                            <li> <%= data[i].genre3 %></li>
+                        </ul>
                     </div>
-                    <button>
-                        <p>Remove</p>
-                    </button>
                 </a>
+                <button>
+                    <p>Remove</p>
+                </button>
             </li>
-           
+            <% } %>
         </ul>
         <p>This is the end of the list!</p>
     </main>

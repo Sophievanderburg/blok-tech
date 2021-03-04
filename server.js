@@ -11,7 +11,6 @@ mongo.MongoClient.connect(process.env.MONGO_URI, function (err, client) {
   db = client.db(process.env.DB_NAME) 
 })
 
-//var data = [];
 var matches = [
   {
     firstname: "Hannah",
@@ -67,15 +66,15 @@ app.listen(3000);
 
 // callback functions
 function onsavedmatch(req, res) {
-  db.collection('users').findOne({
-    _id: mongo.ObjectID("603e5254666b072fef58e44b")
-    }, done)
+  db.collection('users').find().toArray(done)
+  
     function done(err, data) {
     if (err) {
     next(err)
     } else {
       res.render("savedmatch.ejs", { data: data });
     } 
+    console.log(data);
   } 
 }
 
