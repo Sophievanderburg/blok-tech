@@ -48,7 +48,7 @@ app.set("view engine", "ejs");
 // make the static/public folder public
 app.use(express.static("static/public"));
 
-// bodyParser iets
+// bodyParser zorgt ervoor dat inpunt in req.body komen te staan
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.mehtod('path', callbackfunction)
@@ -67,7 +67,7 @@ app.listen(3000);
 // callback functions
 function onsavedmatch(req, res) {
   db.collection('users').find().toArray(done)
-  
+
     function done(err, data) {
     if (err) {
     next(err)
