@@ -74,9 +74,8 @@ function onsavedmatch(req, res) {
     } else {
       res.render("savedmatch.ejs", { data: data });
     } 
-    console.log("data");
+    console.log(data);
   } 
-  
 }
 
 function onmatch(req, res) {
