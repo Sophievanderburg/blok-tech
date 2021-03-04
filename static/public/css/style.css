@@ -5,7 +5,7 @@
 }
 /* ----------------- typografie ----------------*/
 header h1{
-   font-size: 2em; 
+   font-size: 1.5em; 
 }
 
 header button p{
@@ -22,6 +22,7 @@ main ul li a div p {
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 /* ----------------- header ----------------*/
@@ -128,7 +129,6 @@ main ul li > button{
 main > p{
     width: 100%;
     text-align: center;
-    padding-top: 1.5em;
 }
 
 /* pop up that show when the user clicks on the remove button */
@@ -192,6 +192,6 @@ main article.popup button:last-of-type{
 }
 
 /* ----------------- footer ----------------*/
-body > div {
+footer {
     margin-top: 2em;
 }

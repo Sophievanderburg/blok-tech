@@ -15,7 +15,8 @@ header > h1{
     width: 100%;
     text-align: center;
     color: #484692;
-}
+    font-size: 1.5em; 
+ }
 
 header button{
     position: absolute;
@@ -36,13 +37,14 @@ main{
     position: relative;
 }
 
+/* back link*/
 main > a{
     color: #484692;
     border: 3px solid #484692;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
-    padding: 0.5em;
+    padding: 0.25em 0.75em;
 
     position:absolute;
     left: 0.5em;
@@ -64,7 +66,9 @@ main article div{
     padding-bottom: 1.5em;
 }
 
+/* remove from matches button*/
 main article button{
+    display:block;
     color:#484692;
     background-color: white;
     border-radius: 5px;
@@ -72,7 +76,7 @@ main article button{
     border:2px solid #484692;
     
     width: 70%;
-    margin: 0.75em auto 0.75em auto;
+    margin: 0 auto 0.75em auto;
     font-size: 1.25em;
 }
 
@@ -85,6 +89,7 @@ main article h4{
     margin: 1em 0 0.5em 0;
 }
 
+/* genres ul*/
 main article ul{
     /* margin: 1em 0; */
     display: flex;
@@ -93,7 +98,7 @@ main article ul{
 }
 
 main article ul li{
-    margin: 0 0.25em;
+    margin: 0 0.5em 0 0;
     padding: 0.5em 1em;
     width: auto;
     white-space: nowrap;
@@ -104,8 +109,10 @@ main article ul li{
     border-radius: 1em;
 }
 
+/* link to favorite song*/
 main article a{
+    display: block;
     width: 80%;
-    border: 3px solid #484692;
+    border: 2px solid #484692;
     padding: 0.5em 1em;
 }
