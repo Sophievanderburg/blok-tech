@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/profile.css">
+    <title><%= data.firstname %>  <%= data.lastname %></title>
+  </head>
+  <body>
+    <header>
+      <button>
+        <img src="/images/menu.png" alt="menu icon" />
+      </button>
+      <h1>Profile</h1>
+    </header>
+    <main>
+      <a href="/"> &lt; Back</a>
+
+      <article>
+        <img src= "/<%= data.imgSource %>" >
+        <div>
+          <button class="remove" >Remove from matches</button>
+          <h2><%= data.firstname %>  <%= data.lastname %></h2>
+          <p>Age: <%= data.age %></p>
+          <h4>Favorite genres</h4>
+          <ul>
+            <li><%= data.genre1 %></li>
+            <li><%= data.genre2 %></li>
+            <li><%= data.genre3 %></li>
+          </ul>
+          <h4>Favorite song</h4>
+          <a><%= data.favSongTitle %>, <%= data.favSongArtist %></a>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <p>Sophie van der Burg</p>
+    </footer>
+  </body>
+</html>

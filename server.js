@@ -40,6 +40,7 @@ function main () {
 
     // app.mehtod('path', callbackfunction)
     app.get("/", onsavedmatch);
+    app.get("/profile/:id", onprofile);
     app.get("/match", onmatch);
     app.get("/practice", onpractice);
     app.post("/practice", postname);
@@ -56,8 +57,18 @@ function main () {
       db.collection('users').find().toArray()
         .then(results => {
           res.render("savedmatch.ejs",
-          {data: results,});
+          {data: results});
         })
+    }
+
+    function onprofile (req, res){
+      db.collection('users').findOne({firstname:req.params.id})
+      .then(results => {
+        res.render("profile.ejs",{
+          data: results, 
+          id: data.firstname
+        });
+      })
     }
 
     function onmatch(req, res) {

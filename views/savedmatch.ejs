@@ -17,7 +17,7 @@
         <ul>
             <% for(var i=0; i < data.length; i++) {%>
             <li>
-                <a>
+                <a href="/profile/<%= data[i].firstname %>">
                     <img src= "<%= data[i].imgSource %>" >
                     <div>
                         <h2> <%= data[i].firstname %>  <%= data[i].lastname %></h2>
