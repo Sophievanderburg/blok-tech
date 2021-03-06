@@ -3,104 +3,88 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser"); //parses the data and stores it in req.body
 const mongo = require("mongodb");
+const MongoClient = require("mongodb").MongoClient;
 
-var db = null;
+// Database set up
+//const db = require("./database/db.js")
+const uri = process.env.MONGO_URI
+// name of database in Atlas
+const dbName = process.env.DB_NAME;
+// Name of collection in Atlas
+const dbCollectionName = process.env.DB_COLLECTION_NAME;
 
-mongo.MongoClient.connect(process.env.MONGO_URI, function (err, client) { 
-  if (err) throw err 
-  db = client.db(process.env.DB_NAME) 
-})
+let data = [] 
 
-var matches = [
-  {
-    firstname: "Hannah",
-    lastname: "Rosenberg",
-    age: "20",
-    source: "images/profile/1.jpg",
-    genre1: "Pop",
-    genre2: "Electronic",
-    genre3: "Rock",
-  },
-  {
-    firstname: "Rob",
-    lastname: "Bakker",
-    age: "23",
-    source: "images/profile/2.jpg",
-    genre1: "Rock",
-    genre2: "Pop",
-    genre3: "Electronic",
-  },
 
-  {
-    firstname: "Mark",
-    lastname: "de Graaf",
-    age: "26",
-    source: "images/profile/3.jpg",
-    genre1: "Electronic",
-    genre2: "Rock",
-    genre3: "Pop",
-  },
-];
+main ();
 
-// view engine ejs
-app.set("view engine", "ejs");
+function main () {
+  MongoClient
+    .connect(uri , {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    
+    .then(connection => {
+      const db = connection.db(dbName)
+      console.log("connectie is gemaakt!");
 
-// make the static/public folder public
-app.use(express.static("static/public"));
+    // view engine ejs
+    app.set("view engine", "ejs");
 
-// bodyParser zorgt ervoor dat inpunt in req.body komen te staan
-app.use(bodyParser.urlencoded({ extended: true }));
+    // make the static/public folder public
+    app.use(express.static("static/public"));
 
-// app.mehtod('path', callbackfunction)
-app.get("/", onsavedmatch);
-app.get("/match", onmatch);
-app.get("/practice", onpractice);
-app.post("/practice", postname);
-app.delete("/practice", deleteListitem);
+    // bodyParser zorgt ervoor dat inpunt in req.body komen te staan
+    app.use(bodyParser.urlencoded({ extended: true }));
 
-// errors
-app.use(error404);
+    // app.mehtod('path', callbackfunction)
+    app.get("/", onsavedmatch);
+    app.get("/match", onmatch);
+    app.get("/practice", onpractice);
+    app.post("/practice", postname);
+    app.delete("/practice", deleteListitem);
 
-// server listens to port 3000
-app.listen(3000);
+    // errors
+    app.use(error404);
 
-// callback functions
-function onsavedmatch(req, res) {
-  db.collection('users').find().toArray(done)
+    // server listens to port 3000
+    app.listen(3000);
 
-    function done(err, data) {
-    if (err) {
-    next(err)
-    } else {
-      res.render("savedmatch.ejs", { data: data });
-    } 
-    console.log(data);
-  } 
-}
+    // callback functions
+    function onsavedmatch(req, res) {
+      db.collection('users').find().toArray()
+        .then(results => {
+          res.render("savedmatch.ejs",
+          {data: results,});
+        })
+    }
 
-function onmatch(req, res) {
-  res.render("match.ejs");
-}
+    function onmatch(req, res) {
+      res.render("match.ejs");
+    }
 
-function onpractice(req, res) {
-  res.render("practice.ejs", {
-    name: "Sophie",
-    age: 19,
-    firstname: "...",
-    animal: ["dog", "cat", "frog", "mouse"],
-  });
-}
+    function onpractice(req, res) {
+      res.render("practice.ejs", {
+        name: "Sophie",
+        age: 19,
+        firstname: "...",
+        animal: ["dog", "cat", "frog", "mouse"],
+      });
+    }
 
-//werkt niet!!
-function deleteListitem(req, res) {
-  res.send("Got a DELETE request at /practice");
-}
+    //werkt niet!!
+    function deleteListitem(req, res) {
+      res.send("Got a DELETE request at /practice");
+    }
 
-function postname(req, res) {
-  data.push({ firstname: req.body.firstname });
-  res.send({ firstname: "req.body.firstname" });
-}
+    function postname(req, res) {
+      data.push({ firstname: req.body.firstname });
+      res.send({ firstname: "req.body.firstname" });
+    }
 
-function error404(req, res, next) {
-  res.status(404).send("Sorry can't find that!");
+    function error404(req, res, next) {
+      res.status(404).send("Sorry can't find that!");
+    }
+});
 }
