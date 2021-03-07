@@ -67,7 +67,7 @@ main article div{
 }
 
 /* remove from matches button*/
-main article button.remove{
+main article form button.remove{
     display:block;
     color:#484692;
     background-color: white;

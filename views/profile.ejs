@@ -19,7 +19,9 @@
       <article>
         <img src= "/<%= data.imgSource %>" >
         <div>
-          <button class="remove" >Remove from matches</button>
+          <form method="POST" action="/profile/<%= data._id%>?_method=DELETE">
+            <button type="submit" class="remove">Remove from matches</button>
+        </form>
           <h2><%= data.firstname %>  <%= data.lastname %></h2>
           <p>Age: <%= data.age %></p>
           <h4>Favorite genres</h4>

@@ -30,7 +30,7 @@
                     </div>
                 </a>
                 <form method="POST" action="/?_method=DELETE">
-                    <button type="submit" class="remove">Remove</button>
+                    <button type="submit" class="remove" data-userId="<%= data[i]._id%>">Remove</button>
                 </form>
             </li>
             <% } %>

@@ -47,6 +47,7 @@ function main () {
     app.get("/", onsavedmatch);
     app.delete("/", deleteMatch);
     app.get("/profile/:id", onprofile);
+    app.delete("/profile/:id", deleteonprofile);
     app.get("/match", onmatch);
     app.get("/practice", onpractice);
     app.post("/practice", postname);
@@ -66,10 +67,12 @@ function main () {
         })
     }
 
+    // does not work yet
     function deleteMatch (){
-      console.log("DELETE")
-      db.collection('users').deleteOne(/* verwijder de user waar in de li is geklikt*/)
-      /* dan paigna herladen, zodat verwijderde gebruiekr niet meer te zien is. */
+      console.log("DELETE1");
+      console.log(button.dataset.userId);
+      //db.collection('users').deleteOne({_id: mongo.ObjectId(button.dataset.userId)})
+      /* dan paigna herladen, zodat verwijderde gebruiker niet meer te zien is. */
     }
 
 
@@ -80,6 +83,15 @@ function main () {
           data: results, 
         });
       })
+    }
+
+    function deleteonprofile (req,res){
+      console.log("DELETE_PROFILE");
+      db.collection('users').deleteOne({_id: mongo.ObjectId(req.params.id)})
+      .then(
+        res.redirect('/'),
+        );
+
     }
 
     function onmatch(req, res) {
