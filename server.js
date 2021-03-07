@@ -40,11 +40,11 @@ function main () {
 
     // app.mehtod('path', callbackfunction)
     app.get("/", onsavedmatch);
+    app.delete("/", deleteMatch);
     app.get("/profile/:id", onprofile);
     app.get("/match", onmatch);
     app.get("/practice", onpractice);
     app.post("/practice", postname);
-    app.delete("/practice", deleteListitem);
 
     // errors
     app.use(error404);
@@ -61,12 +61,16 @@ function main () {
         })
     }
 
+    function deleteMatch (){
+      console.log("DELETE")
+    }
+
+
     function onprofile (req, res){
-      db.collection('users').findOne({firstname:req.params.id})
+      db.collection('users').findOne({_id: mongo.ObjectId(req.params.id)})
       .then(results => {
         res.render("profile.ejs",{
           data: results, 
-          id: data.firstname
         });
       })
     }
@@ -82,11 +86,6 @@ function main () {
         firstname: "...",
         animal: ["dog", "cat", "frog", "mouse"],
       });
-    }
-
-    //werkt niet!!
-    function deleteListitem(req, res) {
-      res.send("Got a DELETE request at /practice");
     }
 
     function postname(req, res) {
