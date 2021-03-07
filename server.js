@@ -44,6 +44,7 @@ function main () {
     app.use(methodOverride('_method'));
 
     // app.mehtod('path', callbackfunction)
+    app.get("/signin", onsignin)
     app.get("/", onsavedmatch);
     app.delete("/", deleteMatch);
     app.get("/profile/:id", onprofile);
@@ -59,13 +60,20 @@ function main () {
     app.listen(3000);
 
     // callback functions
+    function onsignin (req, res){
+      res.render("signin.ejs", 
+      {title:"Sign in"})
+    }
+
     function onsavedmatch(req, res) {
       db.collection('users').find().toArray()
         .then(results => {
-          res.render("savedmatch.ejs",
-          {data: results});
+          res.render("savedmatch.ejs",{
+            data: results,
+            title:"Saved matches"
+          })
         })
-    }
+      }
 
     function deleteMatch (req, res){
       console.log("DELETE1");
@@ -81,7 +89,8 @@ function main () {
       db.collection('users').findOne({_id: mongo.ObjectId(req.params.id)})
       .then(results => {
         res.render("profile.ejs",{
-          data: results, 
+          data: results,
+          title:"Profile" 
         });
       })
     }
