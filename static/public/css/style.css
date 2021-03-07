@@ -112,7 +112,7 @@ main ul li{
 }
 
 /*remove button*/
-main ul li > button{
+main ul li form button.remove{
     color: #484692;
     text-decoration: underline;
     font-size: 1em;

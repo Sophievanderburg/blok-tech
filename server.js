@@ -1,5 +1,6 @@
 require("dotenv").config()
 const express = require("express");
+const methodOverride = require('method-override');
 const app = express();
 const bodyParser = require("body-parser"); //parses the data and stores it in req.body
 const mongo = require("mongodb");
@@ -38,6 +39,10 @@ function main () {
     // bodyParser zorgt ervoor dat inpunt in req.body komen te staan
     app.use(bodyParser.urlencoded({ extended: true }));
 
+    // enables to override a POST-method in a form
+    // Source: https://dev.to/moz5691/method-override-for-put-and-delete-in-html-3fp2
+    app.use(methodOverride('_method'));
+
     // app.mehtod('path', callbackfunction)
     app.get("/", onsavedmatch);
     app.delete("/", deleteMatch);
@@ -63,6 +68,8 @@ function main () {
 
     function deleteMatch (){
       console.log("DELETE")
+      db.collection('users').deleteOne(/* verwijder de user waar in de li is geklikt*/)
+      /* dan paigna herladen, zodat verwijderde gebruiekr niet meer te zien is. */
     }
 
 
