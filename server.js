@@ -67,12 +67,13 @@ function main () {
         })
     }
 
-    // does not work yet
-    function deleteMatch (){
+    function deleteMatch (req, res){
       console.log("DELETE1");
-      console.log(dataset.userId);
-      //db.collection('users').deleteOne({_id: mongo.ObjectId(button.dataset.userId)})
-      /* dan paigna herladen, zodat verwijderde gebruiker niet meer te zien is. */
+      console.log(req.body.userId)
+      db.collection('users').deleteOne({_id: mongo.ObjectId(req.body.userId)})
+      .then(
+        res.redirect('/'),
+        );
     }
 
 
