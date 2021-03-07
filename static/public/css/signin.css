@@ -38,7 +38,7 @@ label, input, button{
 }
 
 main form {
-    padding: 1em;
+    padding: 1em 1.5em;
 }
 
 main form h3, main form h4{
@@ -64,6 +64,11 @@ main form input{
     padding: 1em;
 }
 
+main form input:focus{
+    box-shadow: 0px 0px 3px #aaa9de;
+    outline: none;
+}
+
 main form button{
     margin: 1.5em  auto 0 auto;
     padding: 0.5em;
@@ -72,7 +77,7 @@ main form button{
     font-size: 1.25em;
 
     color: white;
-    background-image: linear-gradient(to bottom right, #71ebe3, #52C9C2); 
+    background-image: linear-gradient(to bottom right, #908ede, #484692); 
     border-radius: 1em;
     border: none;
 }
