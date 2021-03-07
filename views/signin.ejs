@@ -1,27 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/signin.css" />
     <title>Matching app feature</title>
-</head>
-<body>
-    <header>
-        <%- include('partials/header.ejs') %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('partials/header.ejs') %></header>
     <main>
-        <form method="POST" action="/signin">
-            <input type="text" name="firstname">
-            <input type="text" name="lastname">
-            <input type="number" name="age">
-            <input type="text" name="genre1">
-            <input type="text" name="genre2">
-            <input type="text" name="genre3">
-        </form>
+      <form method="POST" action="/signin">
+        <h3>About you</h3>
+        <label>Firstname</label>
+        <input type="text" name="firstname" id="firstname" />
+
+        <label>Lastname</label>
+        <input type="text" name="lastname" id="lastname" />
+
+        <label>Age</label>
+        <input type="text" name="age" id="age" />
+
+        <h3>What music do you like?</h3>
+        <h4>What are you favorite genres?</h4>
+        <label>Genre 1</label>
+        <input type="text" name="genre1" id="genre1" />
+        <label>Genre 2</label>
+        <input type="text" name="genre2" id="genre 2" />
+        <label>Genre 3</label>
+        <input type="text" name="genre3" id="genre 3" />
+
+        <h4>What is you favorite song?</h4>
+        <label>Songtitle</label>
+        <input type="text" name="favSongTitle" id="favSongTitle"/>
+        <label>Artist</label>
+        <input type="text" name="favSongArtist" id="favSongArtist"/>
+
+        <button type="submit">Sign in!</button>
+      </form>
     </main>
-    <footer>
-    <%- include('partials/footer') %>
-    </footer>
-</body>
+    <footer><%- include('partials/footer') %></footer>
+  </body>
 </html>

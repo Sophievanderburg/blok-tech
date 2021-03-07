@@ -45,6 +45,7 @@ function main () {
 
     // app.mehtod('path', callbackfunction)
     app.get("/signin", onsignin)
+    app.post("/signin", signin)
     app.get("/", onsavedmatch);
     app.delete("/", deleteMatch);
     app.get("/profile/:id", onprofile);
@@ -63,6 +64,14 @@ function main () {
     function onsignin (req, res){
       res.render("signin.ejs", 
       {title:"Sign in"})
+    }
+
+    function signin (req, res){
+      console.log(req.body)
+      db.collection('users').insertOne(req.body)
+      .then(
+        res.redirect('/'),
+        );
     }
 
     function onsavedmatch(req, res) {
