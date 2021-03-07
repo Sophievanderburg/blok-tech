@@ -70,7 +70,7 @@ function main () {
     // does not work yet
     function deleteMatch (){
       console.log("DELETE1");
-      console.log(button.dataset.userId);
+      console.log(dataset.userId);
       //db.collection('users').deleteOne({_id: mongo.ObjectId(button.dataset.userId)})
       /* dan paigna herladen, zodat verwijderde gebruiker niet meer te zien is. */
     }
