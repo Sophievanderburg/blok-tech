@@ -14,9 +14,6 @@ const dbName = process.env.DB_NAME;
 // Name of collection in Atlas
 const dbCollectionName = process.env.DB_COLLECTION_NAME;
 
-let data = [] 
-
-
 main ();
 
 function main () {
@@ -86,7 +83,6 @@ function main () {
 
     function deleteMatch (req, res){
       console.log("DELETE1");
-      console.log(req.body.userId)
       db.collection('users').deleteOne({_id: mongo.ObjectId(req.body.userId)})
       .then(
         res.redirect('/'),
