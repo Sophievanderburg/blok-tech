@@ -38,7 +38,7 @@ function main() {
     // Source: https://dev.to/moz5691/method-override-for-put-and-delete-in-html-3fp2
     app.use(methodOverride('_method'));
 
-    // app.mehtod('path', callbackfunction)
+    // app.method('path', callbackfunction)
     app.get("/signin", onsignin);
     app.post("/signin", signin);
     app.get("/", onsavedmatch);
@@ -65,7 +65,6 @@ function main() {
     }
 
     function signin (req, res){
-      console.log(req.body)
       db.collection('users').insertOne(req.body)
       .then(() => {
         res.redirect('/')
