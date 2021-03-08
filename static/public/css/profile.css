@@ -32,6 +32,61 @@ header button img{
     width: 100%;
 }
 
+/* menu */
+header nav{
+    margin:0; padding: 0;
+    background-color:white;
+    box-shadow: 0px 0px 6px lightgrey;
+	
+    position:fixed;
+	top:0;
+	left:0;
+	width:65%;
+	height:100%;
+	
+	transform:translateX(-120%);
+	transition:0.5s;
+    z-index:2;  
+}
+
+header nav.toonSection{
+    transform: translateX(0);
+}
+
+header nav h3{
+    padding: 2em 1em 0 1em;
+
+}
+
+header nav ul {
+    padding: 1em;
+    padding-top: 0;
+    list-style-type: none;
+}
+
+header nav ul li{
+    border-bottom: 1px solid lightgrey;
+    padding: 1em 0;
+}
+
+header nav > button{
+    width: 15%;
+    height: 1.5em;
+    font-size: 2em;
+    font-weight: 600;
+    
+    border: none;
+    background-color: #484692;
+    color:white;
+    
+    z-index: 2;
+    
+    position:absolute;
+	left:100%;
+	top: 0;
+}
+
+
 /* ----------- main ------------ */
 main{
     position: relative;
@@ -62,7 +117,7 @@ main article div{
     width: 100%;
     border-radius: 20px 20px 0 0;
     background-color: white;
-    z-index: 5;
+    z-index: 1;
     padding-bottom: 1.5em;
 }
 
