@@ -28,7 +28,21 @@ $ git clone https://github.com/Sophievanderburg/blok-tech.git
 $ npm install
 ```
 3. Create a database with MongoDB Atlas. This link will help you do it: https://docs.atlas.mongodb.com/getting-started/ </br>
-4. Create a ``.env`` file in the root of the folder. Place the following code in the ``.env`` file
+4. In your **database collection** you should make documents like this:</br>  
+``` 
+_id: objectId(" "), <-- this one will be there automatically
+firstname: " "
+lastname: " "
+age: " "
+genre1: " "
+genre2: " "
+genre3: " "
+favSongTitle: " "
+favSongArtist: " "
+imgSource: " "
+```
+
+5. Create a ``.env`` file in the root of the folder. Place the following code in the ``.env`` file
 ```
 MONGO_URI=<here comes your own mongoURI>
 DB_NAME=<here comes your own database name>
