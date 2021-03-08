@@ -1,11 +1,24 @@
 # :iphone: Matching-app feature
 ## :musical_note: Description
-For Block-web we have to create a feauture for a matching-webapp. We learn to work with Git/GitHub, Node.js, Express & EJS.
+For Blok-Tech we have to create a feauture for a matching-webapp. We learn to work with Git/GitHub, Node.js, Express, EJS & Mongodb Atlas.
 
 My target audience for this project are people who want to find other people to go to concerts/festivals with. The match is based on the music taste.
 
+### The feature
+**The job story I wanted to solve was** </br>
+When I have saved someone I don't want to get to know afterwards, I want to remove this person form the 'Saved macthes'-list, so I can get to know other people. 
+
+**There are 2 ways to delete a user with this feature**
+1. Delete directly form the list, by clicking the remove-button
+2. You can click on the list item of a person. This will direct you to the profile of this person. On their profile you can delete them with a button as well.
+
+**Extra** </br>
+When I was testing, I had to delete users. They actually remove form the database (ofcourse), but after a view deletes I do not have any users left. 
+So instead of creating new users to delete in de database manually, I created a **sign in page**. With this page you can add users to the database with a form, which is much more fun to do.
+
 ## :computer: How to install
-If you want to use my feature, you can do so by following **two simple steps**: 
+Before you start, make sure you have Git and Node.js installed on your computer.</br>
+Then you can install my feature by following **two simple steps**: 
 1. Clone the repository by running this code in your terminal:
 ```
 $ git clone https://github.com/Sophievanderburg/blok-tech.git
