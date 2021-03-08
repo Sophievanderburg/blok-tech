@@ -1,173 +1,175 @@
-*, *::after, *::before {
-    box-sizing:border-box;
-    padding: 0; margin: 0;
-    font-family: Helvetica;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
 }
 
 /* ------------ header -------- */
-header{
-    padding: 1em 0;
-    position: relative;
-    box-shadow: 0px 0px 5px lightgrey;
+header {
+  padding: 1em 0;
+  position: relative;
+  box-shadow: 0px 0px 5px lightgrey;
 }
 
-header > h1{
-    width: 100%;
-    text-align: center;
-    color: #484692;
-    font-size: 1.5em; 
- }
-
-header button{
-    position: absolute;
-    top: 1em;
-    left: 1em;
-
-    width: 3em;
-    border: none;
-    background-color: white;
+header > h1 {
+  width: 100%;
+  text-align: center;
+  color: #484692;
+  font-size: 1.5em;
 }
 
-header button img{
-    width: 100%;
+header button {
+  position: absolute;
+  top: 1em;
+  left: 1em;
+
+  width: 3em;
+  border: none;
+  background-color: white;
+}
+
+header button img {
+  width: 100%;
 }
 
 /* menu */
-header nav{
-    margin:0; padding: 0;
-    background-color:white;
-    box-shadow: 0px 0px 6px lightgrey;
-	
-    position:fixed;
-	top:0;
-	left:0;
-	width:65%;
-	height:100%;
-	
-	transform:translateX(-120%);
-	transition:0.5s;
-    z-index:2;  
+header nav {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0px 0px 6px lightgrey;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 100%;
+
+  transform: translateX(-120%);
+  transition: 0.5s;
+  z-index: 2;
 }
 
-header nav.toonSection{
-    transform: translateX(0);
+header nav.toonSection {
+  transform: translateX(0);
 }
 
-header nav h3{
-    padding: 2em 1em 0 1em;
-
+header nav h3 {
+  padding: 2em 1em 0 1em;
 }
 
 header nav ul {
-    padding: 1em;
-    padding-top: 0;
-    list-style-type: none;
+  padding: 1em;
+  padding-top: 0;
+  list-style-type: none;
 }
 
-header nav ul li{
-    border-bottom: 1px solid lightgrey;
-    padding: 1em 0;
+header nav ul li {
+  border-bottom: 1px solid lightgrey;
+  padding: 1em 0;
 }
 
-header nav > button{
-    width: 15%;
-    height: 1.5em;
-    font-size: 2em;
-    font-weight: 600;
-    
-    border: none;
-    background-color: #484692;
-    color:white;
-    
-    z-index: 2;
-    
-    position:absolute;
-	left:100%;
-	top: 0;
-}
+header nav > button {
+  width: 15%;
+  height: 1.5em;
+  font-size: 2em;
+  font-weight: 600;
 
+  border: none;
+  background-color: #484692;
+  color: white;
+
+  z-index: 2;
+
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
 
 /* ----------- main ------------ */
-main{
-    position: relative;
+main {
+  position: relative;
 }
 
 /* back link*/
-main > a{
-    color: #484692;
-    border: 3px solid #484692;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    padding: 0.25em 0.75em;
+main > a {
+  color: #484692;
+  border: 3px solid #484692;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: 0.25em 0.75em;
 
-    position:absolute;
-    left: 0.5em;
-    top: 0.5em;
+  position: absolute;
+  left: 0.5em;
+  top: 0.5em;
 }
 
-main article{
-    display: flex;
-    flex-direction: column;
+main article {
+  display: flex;
+  flex-direction: column;
 }
 
-main article div{
-    margin-top: -1em;
-    padding: 1em;
-    width: 100%;
-    border-radius: 20px 20px 0 0;
-    background-color: white;
-    z-index: 1;
-    padding-bottom: 1.5em;
+main article div {
+  margin-top: -1em;
+  padding: 1em;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  background-color: white;
+  z-index: 1;
+  padding-bottom: 1.5em;
 }
 
 /* remove from matches button*/
-main article form button.remove{
-    display:block;
-    color:#484692;
-    background-color: white;
-    border-radius: 5px;
-    padding: 0.25em 0.75em;
-    border:2px solid #484692;
-    
-    width: 70%;
-    margin: 0 auto 0.75em auto;
-    font-size: 1.25em;
+main article form button.remove {
+  display: block;
+  color: #484692;
+  background-color: white;
+  border-radius: 5px;
+  padding: 0.25em 0.75em;
+  border: 2px solid #484692;
+
+  width: 70%;
+  margin: 0 auto 0.75em auto;
+  font-size: 1.25em;
 }
 
-main article img{
-    width: 100vw;
-    margin: 0 50% 0 auto;
+main article img {
+  width: 100vw;
+  margin: 0 50% 0 auto;
 }
 
-main article h4{
-    margin: 1em 0 0.5em 0;
+main article h4 {
+  margin: 1em 0 0.5em 0;
 }
 
 /* genres ul*/
-main article ul{
-    /* margin: 1em 0; */
-    display: flex;
-    width: 100%;
-    list-style-type:none;
+main article ul {
+  /* margin: 1em 0; */
+  display: flex;
+  width: 100%;
+  list-style-type: none;
 }
 
-main article ul li{
-    margin: 0 0.5em 0 0;
-    padding: 0.5em 1em;
-    width: auto;
-    white-space: nowrap;
-    text-align: center;
+main article ul li {
+  margin: 0 0.5em 0 0;
+  padding: 0.5em 1em;
+  width: auto;
+  white-space: nowrap;
+  text-align: center;
 
-    color: white;
-    background-image: linear-gradient(to bottom right, #71ebe3, #52C9C2); 
-    border-radius: 1em;
+  color: white;
+  background-image: linear-gradient(to bottom right, #71ebe3, #52c9c2);
+  border-radius: 1em;
 }
 
 /* link to favorite song*/
-main article a{
-    display: block;
-    width: 80%;
-    border: 2px solid #484692;
-    padding: 0.5em 1em;
+main article a {
+  display: block;
+  width: 80%;
+  border: 2px solid #484692;
+  padding: 0.5em 1em;
 }

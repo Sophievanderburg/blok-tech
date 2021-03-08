@@ -1,4 +1,4 @@
-require("dotenv").config()
+require("dotenv").config();
 const express = require("express");
 const methodOverride = require('method-override');
 const app = express();
@@ -8,15 +8,15 @@ const MongoClient = require("mongodb").MongoClient;
 
 // Database set up
 //const db = require("./database/db.js")
-const uri = process.env.MONGO_URI
+const uri = process.env.MONGO_URI;
 // name of database in Atlas
 const dbName = process.env.DB_NAME;
 // Name of collection in Atlas
 const dbCollectionName = process.env.DB_COLLECTION_NAME;
 
-main ();
+main();
 
-function main () {
+function main() {
   MongoClient
     .connect(uri , {
       useNewUrlParser: true,
@@ -41,12 +41,14 @@ function main () {
     app.use(methodOverride('_method'));
 
     // app.mehtod('path', callbackfunction)
-    app.get("/signin", onsignin)
-    app.post("/signin", signin)
+    app.get("/signin", onsignin);
+    app.post("/signin", signin);
     app.get("/", onsavedmatch);
     app.delete("/", deleteMatch);
     app.get("/profile/:id", onprofile);
     app.delete("/profile/:id", deleteonprofile);
+
+    // these are for practice
     app.get("/match", onmatch);
     app.get("/practice", onpractice);
     app.post("/practice", postname);
@@ -59,41 +61,42 @@ function main () {
 
     // callback functions
     function onsignin (req, res){
-      res.render("signin.ejs", 
-      {title:"Sign in"})
+      res.render("signin.ejs", {
+        title:"Sign in"
+      });
     }
 
     function signin (req, res){
       console.log(req.body)
       db.collection('users').insertOne(req.body)
-      .then(
-        res.redirect('/'),
-        );
+      .then(() => {
+        res.redirect('/')
+      });
     }
 
     function onsavedmatch(req, res) {
       db.collection('users').find().toArray()
         .then(results => {
-          res.render("savedmatch.ejs",{
+          res.render("savedmatch.ejs", {
             data: results,
             title:"Saved matches"
-          })
-        })
+          });
+        });
       }
 
     function deleteMatch (req, res){
       console.log("DELETE1");
       db.collection('users').deleteOne({_id: mongo.ObjectId(req.body.userId)})
-      .then(
-        res.redirect('/'),
-        );
+      .then(() => {
+        res.redirect('/')
+      });
     }
 
 
     function onprofile (req, res){
       db.collection('users').findOne({_id: mongo.ObjectId(req.params.id)})
       .then(results => {
-        res.render("profile.ejs",{
+        res.render("profile.ejs", {
           data: results,
           title:"Profile" 
         });
@@ -103,10 +106,9 @@ function main () {
     function deleteonprofile (req,res){
       console.log("DELETE_PROFILE");
       db.collection('users').deleteOne({_id: mongo.ObjectId(req.params.id)})
-      .then(
-        res.redirect('/'),
-        );
-
+      .then(() => {
+        res.redirect('/')
+      });
     }
 
     function onmatch(req, res) {
@@ -118,7 +120,7 @@ function main () {
         name: "Sophie",
         age: 19,
         firstname: "...",
-        animal: ["dog", "cat", "frog", "mouse"],
+        animal: ["dog", "cat", "frog", "mouse"]
       });
     }
 

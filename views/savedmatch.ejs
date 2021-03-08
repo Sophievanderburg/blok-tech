@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Matching app feature</title>
-</head>
-<body>
-    <header>
-        <%- include('partials/header.ejs') %>
-    </header>
+  </head>
+  <body>
+    <header><%- include('partials/header.ejs') %></header>
     <main>
-        <ul>
-            <% for(var i=0; i < data.length; i++) {%>
-            <li>
-                <a href="/profile/<%= data[i]._id%>">
-                    <img src= "<%= data[i].imgSource %>" >
-                    <div>
-                        <h2> <%= data[i].firstname %>  <%= data[i].lastname %></h2>
-                        <p>Age:  <%= data[i].age %></p>
-                        <ul>
-                            <li> <%= data[i].genre1 %></li>
-                            <li> <%= data[i].genre2 %></li> 
-                            <li> <%= data[i].genre3 %></li>
-                        </ul>
-                    </div>
-                </a>
-                <form method="POST" action="/?_method=DELETE">
-                    <input value="<%= data[i]._id%>" type="hidden" name="userId">
-                    <button type="submit" class="remove">Remove</button>
-                </form>
-            </li>
-            <% } %>
-        </ul>
-        <p>This is the end of the list!</p>
+      <ul>
+        <% for(var i=0; i < data.length; i++) {%>
+        <li>
+          <a href="/profile/<%= data[i]._id%>">
+            <img src="<%= data[i].imgSource %>" />
+            <div>
+              <h2><%= data[i].firstname %> <%= data[i].lastname %></h2>
+              <p>Age: <%= data[i].age %></p>
+              <ul>
+                <li><%= data[i].genre1 %></li>
+                <li><%= data[i].genre2 %></li>
+                <li><%= data[i].genre3 %></li>
+              </ul>
+            </div>
+          </a>
+          <form method="POST" action="/?_method=DELETE">
+            <input value="<%= data[i]._id%>" type="hidden" name="userId" />
+            <button type="submit" class="remove">Remove</button>
+          </form>
+        </li>
+        <% } %>
+      </ul>
+      <p>This is the end of the list!</p>
     </main>
-    <footer>
-    <%- include('partials/footer') %>
-    </footer>
+    <footer><%- include('partials/footer') %></footer>
     <script src="/script/scrips.js"></script>
-</body>
+  </body>
 </html>

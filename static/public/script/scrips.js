@@ -2,20 +2,16 @@
 // JavaScript Document
 /*------------------- header menu laten zien ---------------------*/
 var kruisKnopje = document.querySelector("header nav > button");
-
 var menuKnop = document.querySelector("header button");
-
 var menuSection = document.querySelector("header > nav");
 
-
 function toonSection() {
-    menuSection.classList.toggle("toonSection");
-    console.log("het werkt")
+  menuSection.classList.toggle("toonSection");
+  console.log("het werkt");
 }
 
-kruisKnopje.addEventListener('click', toonSection);
-menuKnop.addEventListener('click', toonSection);
-
+kruisKnopje.addEventListener("click", toonSection);
+menuKnop.addEventListener("click", toonSection);
 
 // Pop-up nog werkend maken???
 
