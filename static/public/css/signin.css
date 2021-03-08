@@ -7,6 +7,10 @@
   font-family: Helvetica;
 }
 
+header, main , footer{
+  max-width: 650px;
+}
+
 /* ------------ header -------- */
 header {
   padding: 1em 0;

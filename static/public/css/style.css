@@ -6,6 +6,11 @@
   margin: 0;
   font-family: Helvetica;
 }
+
+header, main , footer{
+  max-width: 650px;
+}
+
 /* ----------------- typografie ----------------*/
 header h1 {
   font-size: 1.5em;
