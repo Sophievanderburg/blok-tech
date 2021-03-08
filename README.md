@@ -29,7 +29,7 @@ $ npm install
 ```
 3. Create a database with MongoDB Atlas. This link will help you do it: https://docs.atlas.mongodb.com/getting-started/ </br>
 4. In your **database collection** you should make documents like this:</br>  
-``` 
+``` js
 _id: objectId(" "), <-- this one will be there automatically
 firstname: " "
 lastname: " "
@@ -47,7 +47,6 @@ imgSource: " "
 MONGO_URI=<here comes your own mongoURI>
 DB_NAME=<here comes your own database name>
 DB_COLLECTION_NAME=<here comes your own collectionname>
-
 ```
 
 And then you are good to go! :thumbsup: </br>
