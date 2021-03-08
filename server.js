@@ -39,17 +39,17 @@ function main() {
     app.use(methodOverride('_method'));
 
     // app.method('path', callbackfunction)
-    app.get("/signin", onsignin);
-    app.post("/signin", signin);
-    app.get("/", onsavedmatch);
+    app.get("/signin", onSignIn);
+    app.post("/signin", signIn);
+    app.get("/", onSavedMatch);
     app.delete("/", deleteMatch);
-    app.get("/profile/:id", onprofile);
-    app.delete("/profile/:id", deleteonprofile);
+    app.get("/profile/:id", onProfile);
+    app.delete("/profile/:id", deleteOnProfile);
 
     // these are for practice
-    app.get("/match", onmatch);
-    app.get("/practice", onpractice);
-    app.post("/practice", postname);
+    app.get("/match", onMatch);
+    app.get("/practice", onPractice);
+    app.post("/practice", postName);
 
     // errors
     app.use(error404);
@@ -58,20 +58,20 @@ function main() {
     app.listen(port);
 
     // callback functions
-    function onsignin (req, res){
+    function onSignIn (req, res){
       res.render("signin.ejs", {
         title:"Sign in"
       });
     }
 
-    function signin (req, res){
+    function signIn (req, res){
       db.collection('users').insertOne(req.body)
       .then(() => {
         res.redirect('/')
       });
     }
 
-    function onsavedmatch(req, res) {
+    function onSavedMatch(req, res) {
       db.collection('users').find().toArray()
         .then(results => {
           res.render("savedmatch.ejs", {
@@ -89,7 +89,7 @@ function main() {
       });
     }
 
-    function onprofile (req, res){
+    function onProfile (req, res){
       db.collection('users').findOne({_id: mongo.ObjectId(req.params.id)})
       .then(results => {
         console.log(results)
@@ -100,7 +100,7 @@ function main() {
       })
     }
 
-    function deleteonprofile (req,res){
+    function deleteOnProfile (req,res){
       console.log("DELETE_PROFILE");
       db.collection('users').deleteOne({_id: mongo.ObjectId(req.params.id)})
       .then(() => {
@@ -108,11 +108,11 @@ function main() {
       });
     }
 
-    function onmatch(req, res) {
+    function onMatch(req, res) {
       res.render("match.ejs");
     }
 
-    function onpractice(req, res) {
+    function onPractice(req, res) {
       res.render("practice.ejs", {
         name: "Sophie",
         age: 19,
@@ -121,7 +121,7 @@ function main() {
       });
     }
 
-    function postname(req, res) {
+    function postName(req, res) {
       data.push({ firstname: req.body.firstname });
       res.send({ firstname: "req.body.firstname" });
     }
