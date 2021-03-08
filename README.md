@@ -18,16 +18,24 @@ So instead of creating new users to delete in de database manually, I created a 
 
 ## :computer: How to install
 Before you start, make sure you have Git and Node.js installed on your computer.</br>
-Then you can install my feature by following **two simple steps**: 
+Then you can install my feature by following these simple steps: 
 1. Clone the repository by running this code in your terminal:
 ```
 $ git clone https://github.com/Sophievanderburg/blok-tech.git
 ```
-2. Install all the npm packages by running this code in your terminal:
+2. Install all the npm packages by running this code in your terminal:</br> You should see a node_modules folder in the root when it is finished.
 ```
 $ npm install
 ```
-You should see a node_modules folder in the root when it is finished.
+3. Create a database with MongoDB Atlas. This link will help you do it: https://docs.atlas.mongodb.com/getting-started/ </br>
+4. Create a ``.env`` file in the root of the folder. Place the following code in the ``.env`` file
+```
+MONGO_URI=<here comes your own mongoURI>
+DB_NAME=<here comes your own database name>
+DB_COLLECTION_NAME=<here comes your own collectionname>
+
+```
+
 And then you are good to go! :thumbsup: </br>
 When you want to run the server, run this code in your terminal:
 ```
