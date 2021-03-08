@@ -7,7 +7,6 @@ var menuSection = document.querySelector("header > nav");
 
 function toonSection() {
   menuSection.classList.toggle("toonSection");
-  console.log("het werkt");
 }
 
 kruisKnopje.addEventListener("click", toonSection);

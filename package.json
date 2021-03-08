@@ -8,6 +8,9 @@
     "hoi": "echo 'Hoi'",
     "dev": "nodemon server.js"
   },
+  "engines": {
+    "node": "14.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Sophievanderburg/blok-tech.git"

@@ -5,13 +5,11 @@ const app = express();
 const bodyParser = require("body-parser"); //parses the data and stores it in req.body
 const mongo = require("mongodb");
 const MongoClient = require("mongodb").MongoClient;
+const port = 3000;
 
 // Database set up
-//const db = require("./database/db.js")
 const uri = process.env.MONGO_URI;
-// name of database in Atlas
 const dbName = process.env.DB_NAME;
-// Name of collection in Atlas
 const dbCollectionName = process.env.DB_COLLECTION_NAME;
 
 main();
@@ -57,7 +55,7 @@ function main() {
     app.use(error404);
 
     // server listens to port 3000
-    app.listen(3000);
+    app.listen(port);
 
     // callback functions
     function onsignin (req, res){
@@ -92,10 +90,10 @@ function main() {
       });
     }
 
-
     function onprofile (req, res){
       db.collection('users').findOne({_id: mongo.ObjectId(req.params.id)})
       .then(results => {
+        console.log(results)
         res.render("profile.ejs", {
           data: results,
           title:"Profile" 
