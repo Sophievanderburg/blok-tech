@@ -55,6 +55,8 @@ When you want to run the server, run this code in your terminal:
 $ npm run dev
 ```
 
+## 🌐 Deploying   
+I also deployed this feature with Heroku. If you want to know more of how I deployed my feature with Heroku, you should check it out [here](https://github.com/Sophievanderburg/blok-tech/wiki/wk-4---Deploying). 
 
 ## :page_facing_up: License
 MIT license - 2021 Sophie van der Burg
